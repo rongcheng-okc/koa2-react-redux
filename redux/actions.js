@@ -1,13 +1,18 @@
-import { CHANGE_NAME, INIT_DATA } from "./actionTypes";
-
 export const initData = content => ({
-  type: INIT_DATA,
+  type: 'INIT_DATA',
   payload: {}
 });
 
-export const changeName = content => ({
-  type: CHANGE_NAME,
-  payload: {
-    btnName: content
+export const changeName0 = content => {
+  return {
+    type: 'CHANGE_NAME0',
+    payload: content
   }
-});
+};
+
+export const changeName1 = content => {
+  return {
+    type: 'CHANGE_NAME1',
+    payload: content
+  }
+};

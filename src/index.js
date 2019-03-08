@@ -5,7 +5,6 @@ import { createStore } from 'redux'
 import reducers from '../redux/reducers'
 
 const store = createStore(reducers);
-// import store from "../redux/store";
 console.log(store.getState());
 
 import App from "./App";

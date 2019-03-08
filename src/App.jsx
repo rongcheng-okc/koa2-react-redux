@@ -8,13 +8,13 @@ import ComponentD from "../components/d";
 import ComponentF from "../containers/f"
 
 import HOC from "../components/hoc/Component"
+import Children from "../components/children"
 
 class App extends Component {
   render() {
     return (
         <Router>
         <div>
-          <ComponentF />
           <nav>
             <ul>
               <li>
@@ -32,6 +32,12 @@ class App extends Component {
               <li>
                 <Link to="/hoc">HOC</Link>
               </li>
+              <li>
+                <Link to="/children">Children</Link>
+              </li>
+              <li>
+                <Link to="/redux">Redux</Link>
+              </li>
             </ul>
           </nav>
           <Switch>
@@ -40,6 +46,8 @@ class App extends Component {
             <Route path="/b" component={ComponentB} />
             <Route path="/d" component={ComponentD} />
             <Route path="/hoc" component={HOC} />
+            <Route path="/children" component={Children} />
+            <Route path="/redux" component={ComponentF} />
           </Switch>
         </div>
       </Router>

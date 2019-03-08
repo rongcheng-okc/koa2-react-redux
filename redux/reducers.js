@@ -1,15 +1,23 @@
 import { combineReducers } from 'redux'
 
-let initialState0 = 'RC0';
-let initialState1 = 'RC1';
+let initialState0 = {name: 'RC0'};
+let initialState1 = {name: 'RC1'};
 
-function initData(state = initialState0, action) {
-  return state;
+function changeName0(state = initialState0, action) {
+  if (action.type === 'CHANGE_NAME0') {
+    let obj = Object.assign({}, state, { name: action.payload });
+    return obj;
+  } else {
+    return state
+  }
 }
 
-function changeName(state = initialState1, action) {
-  if (action.type === 'CHANGE_NAME') {
-    return Object.assign({}, state, { age: action.payload.btnName })
+function changeName1(state = initialState1, action) {
+  console.log(action);
+  if (action.type === 'CHANGE_NAME1') {
+    console.log(state);
+    let obj = Object.assign({}, state, { name: action.payload });
+    return obj;
   } else {
     console.log(state);
     return state
@@ -17,6 +25,6 @@ function changeName(state = initialState1, action) {
 }
 
 export default combineReducers({
-  btnName: initData,
-  btnName1: changeName
+  btnName0: changeName0,
+  btnName1: changeName1
 })
