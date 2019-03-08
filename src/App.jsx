@@ -7,11 +7,14 @@ import ComponentD from "../components/d";
 
 import ComponentF from "../containers/f"
 
+import HOC from "../components/hoc/Component"
+
 class App extends Component {
   render() {
     return (
         <Router>
         <div>
+          <ComponentF />
           <nav>
             <ul>
               <li>
@@ -26,6 +29,9 @@ class App extends Component {
               <li>
                 <Link to="/d">D</Link>
               </li>
+              <li>
+                <Link to="/hoc">HOC</Link>
+              </li>
             </ul>
           </nav>
           <Switch>
@@ -33,8 +39,8 @@ class App extends Component {
             <Route path="/a" component={ComponentA} />
             <Route path="/b" component={ComponentB} />
             <Route path="/d" component={ComponentD} />
+            <Route path="/hoc" component={HOC} />
           </Switch>
-          <ComponentF />
         </div>
       </Router>
     );
