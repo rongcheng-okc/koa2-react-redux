@@ -1,13 +1,56 @@
 import React, { Component } from "react";
 import { HashRouter as Router, Route, Link, Switch} from "react-router-dom";
+import Loadable from 'react-loadable';
 
-import ReduxRouter from "../components/redux-router";
-import ReduxRouterChildren from "../components/redux-router-children";
-import HOC from "../components/hoc/Component"
-import PropsChildren from "../components/props-children"
+const ReduxRouter = Loadable({
+  loader: () => import('../components/redux-router'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
 
-import ReduxCon from "../containers/redux"
-import ReduxThunkCon from "../containers/redux-thunk"
+const ReduxRouterChildren = Loadable({
+  loader: () => import('../components/redux-router-children'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+
+const HOC = Loadable({
+  loader: () => import('../components/hoc/Component'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+
+const PropsChildren = Loadable({
+  loader: () => import('../components/props-children'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+
+const ReduxCon = Loadable({
+  loader: () => import('../containers/redux'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+
+const ReduxThunkCon = Loadable({
+  loader: () => import('../containers/redux-thunk'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+
+// import ReduxRouter from "../components/redux-router";
+// import ReduxRouterChildren from "../components/redux-router-children";
+// import HOC from "../components/hoc/Component"
+// import PropsChildren from "../components/props-children"
+
+// import ReduxCon from "../containers/redux"
+// import ReduxThunkCon from "../containers/redux-thunk"
 
 class App extends Component {
   render() {

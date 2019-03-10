@@ -23,7 +23,9 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         enforce: "pre",
-        use: ["babel-loader"]
+        use: [
+          "babel-loader",
+        ]
       },
       {
         test: /\.css$/,
