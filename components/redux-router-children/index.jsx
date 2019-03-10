@@ -4,9 +4,9 @@ import {
     Link
 } from "react-router-dom";
 
-import E from "../e"
+import ReactRouterChildCom1 from "../redux-router-com1"
 
-class D extends Component {
+class ReactRouterCom extends Component {
   constructor(props) {
     super(props);
   }
@@ -27,7 +27,7 @@ class D extends Component {
           </li>
         </ul>
 
-        <Route path={`${this.props.match.url}/:topicId`} component={E} />
+        <Route path={`${this.props.match.url}/:topicId`} component={ReactRouterChildCom1} />
         <Route
           exact
           path={this.props.match.url}
@@ -38,4 +38,4 @@ class D extends Component {
   }
 }
 
-export default D;
+export default ReactRouterCom;

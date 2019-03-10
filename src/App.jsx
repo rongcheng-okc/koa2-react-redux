@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { HashRouter as Router, Route, Link, Switch} from "react-router-dom";
 
-import ComponentA from "../components/a";
-import ComponentD from "../components/d";
-import ReduxCon from "../containers/redux"
+import ReduxRouter from "../components/redux-router";
+import ReduxRouterChildren from "../components/redux-router-children";
 import HOC from "../components/hoc/Component"
-import Children from "../components/children"
+import PropsChildren from "../components/props-children"
+
+import ReduxCon from "../containers/redux"
 import ReduxThunkCon from "../containers/redux-thunk"
 
 class App extends Component {
@@ -19,16 +20,16 @@ class App extends Component {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/a">A</Link>
+                <Link to="/redux-router">ReduxRouter</Link>
               </li>
               <li>
-                <Link to="/d">D</Link>
+                <Link to="/redux-router-children">ReduxRouterHasChildren</Link>
               </li>
               <li>
                 <Link to="/hoc">HOC</Link>
               </li>
               <li>
-                <Link to="/children">Children</Link>
+                <Link to="/props-children">PropsChildren</Link>
               </li>
               <li>
                 <Link to="/redux">Redux</Link>
@@ -40,10 +41,10 @@ class App extends Component {
           </nav>
           <Switch>
             <Route path="/" exact render={ () => { return <h1>I am Home</h1> } }/>
-            <Route path="/a" component={ComponentA} />
-            <Route path="/d" component={ComponentD} />
+            <Route path="/redux-router" component={ReduxRouter} />
+            <Route path="/redux-router-children" component={ReduxRouterChildren} />
             <Route path="/hoc" component={HOC} />
-            <Route path="/children" component={Children} />
+            <Route path="/props-children" component={PropsChildren} />
             <Route path="/redux" component={ReduxCon} />
             <Route path="/redux-thunk" component={ReduxThunkCon} />
           </Switch>
