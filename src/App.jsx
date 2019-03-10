@@ -2,13 +2,11 @@ import React, { Component } from "react";
 import { HashRouter as Router, Route, Link, Switch} from "react-router-dom";
 
 import ComponentA from "../components/a";
-import ComponentB from "../components/b";
 import ComponentD from "../components/d";
-
-import ComponentF from "../containers/f"
-
+import ReduxCon from "../containers/redux"
 import HOC from "../components/hoc/Component"
 import Children from "../components/children"
+import ReduxThunkCon from "../containers/redux-thunk"
 
 class App extends Component {
   render() {
@@ -24,9 +22,6 @@ class App extends Component {
                 <Link to="/a">A</Link>
               </li>
               <li>
-                <Link to="/b">B</Link>
-              </li>
-              <li>
                 <Link to="/d">D</Link>
               </li>
               <li>
@@ -38,16 +33,19 @@ class App extends Component {
               <li>
                 <Link to="/redux">Redux</Link>
               </li>
+              <li>
+                <Link to="/redux-thunk">Redux-thunk</Link>
+              </li>
             </ul>
           </nav>
           <Switch>
             <Route path="/" exact render={ () => { return <h1>I am Home</h1> } }/>
             <Route path="/a" component={ComponentA} />
-            <Route path="/b" component={ComponentB} />
             <Route path="/d" component={ComponentD} />
             <Route path="/hoc" component={HOC} />
             <Route path="/children" component={Children} />
-            <Route path="/redux" component={ComponentF} />
+            <Route path="/redux" component={ReduxCon} />
+            <Route path="/redux-thunk" component={ReduxThunkCon} />
           </Switch>
         </div>
       </Router>

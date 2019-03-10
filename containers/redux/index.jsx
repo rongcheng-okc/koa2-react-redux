@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import F from "../../components/f";
+import ReduxCom from "../../components/redux";
 import { changeName0, changeName1 } from "../../redux/actions"
 
 const mapStateToProps = (state, ownProps) => {
@@ -23,4 +23,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(F);
+)(ReduxCom);
