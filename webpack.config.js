@@ -15,11 +15,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js|jsx$/,
-        use: 'babel-loader',
-        exclude: /node_modules/
-      },
-      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         enforce: "pre",
@@ -42,7 +37,7 @@ module.exports = {
     ]
   },
   resolve:{
-    extensions:['.js','.jsx','.json'] //表示这几种文件的后缀名可以省略，按照从前到后的方式来进行补全
+    extensions:['.js','.jsx','.json', '.css'] //表示这几种文件的后缀名可以省略，按照从前到后的方式来进行补全
   },
   plugins: [
     new HtmlWebPackPlugin({

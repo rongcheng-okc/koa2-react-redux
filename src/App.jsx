@@ -44,6 +44,13 @@ const ReduxThunkCon = Loadable({
   }
 });
 
+const HookCom = Loadable({
+  loader: () => import('../components/hook'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+
 // import ReduxRouter from "../components/redux-router";
 // import ReduxRouterChildren from "../components/redux-router-children";
 // import HOC from "../components/hoc/Component"
@@ -80,6 +87,9 @@ class App extends Component {
               <li>
                 <Link to="/redux-thunk">Redux-thunk</Link>
               </li>
+              <li>
+                <Link to="/hookCom">HookCom</Link>
+              </li>
             </ul>
           </nav>
           <Switch>
@@ -90,6 +100,7 @@ class App extends Component {
             <Route path="/props-children" component={PropsChildren} />
             <Route path="/redux" component={ReduxCon} />
             <Route path="/redux-thunk" component={ReduxThunkCon} />
+            <Route path="/hookCom" component={HookCom} />
           </Switch>
         </div>
       </Router>
