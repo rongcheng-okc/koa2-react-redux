@@ -12,10 +12,6 @@ module.exports = {
     chunkFilename: "[name].[chunkhash:5].chunk.js"
   },
   devtool: "cheap-module-source-map",
-  devServer: {
-    contentBase: "/dist",
-    publicPath: "/",
-  },
   module: {
     rules: [
       {
