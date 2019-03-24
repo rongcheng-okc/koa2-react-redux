@@ -1,5 +1,10 @@
 import React from "react";
 import ReactDom from "react-dom";
+
+import 'weui';
+import 'react-weui/build/packages/react-weui.css';
+import '../css/common'
+
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'

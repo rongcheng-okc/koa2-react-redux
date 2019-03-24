@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { HashRouter as Router, Route, Link, Switch} from "react-router-dom";
 import Loadable from 'react-loadable';
 
+import routers from '../config/routers'
+
 const ReduxRouter = Loadable({
   loader: () => import('../components/redux-router'),
   loading() {
@@ -51,45 +53,29 @@ const HookCom = Loadable({
   }
 });
 
-// import ReduxRouter from "../components/redux-router";
-// import ReduxRouterChildren from "../components/redux-router-children";
-// import HOC from "../components/hoc/Component"
-// import PropsChildren from "../components/props-children"
-
-// import ReduxCon from "../containers/redux"
-// import ReduxThunkCon from "../containers/redux-thunk"
+const WeUICom = Loadable({
+  loader: () => import('../components/weui'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
 
 class App extends Component {
   render() {
+    let links = routers.map((item, index) => {
+      return (
+        <li key={index}>
+          <Link to={item[0]}>{item[1]}</Link>
+        </li>
+      )
+    });
+
     return (
         <Router>
         <div>
           <nav>
             <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/redux-router">ReduxRouter</Link>
-              </li>
-              <li>
-                <Link to="/redux-router-children">ReduxRouterHasChildren</Link>
-              </li>
-              <li>
-                <Link to="/hoc">HOC</Link>
-              </li>
-              <li>
-                <Link to="/props-children">PropsChildren</Link>
-              </li>
-              <li>
-                <Link to="/redux">Redux</Link>
-              </li>
-              <li>
-                <Link to="/redux-thunk">Redux-thunk</Link>
-              </li>
-              <li>
-                <Link to="/hookCom">HookCom</Link>
-              </li>
+              {links}
             </ul>
           </nav>
           <Switch>
@@ -101,6 +87,7 @@ class App extends Component {
             <Route path="/redux" component={ReduxCon} />
             <Route path="/redux-thunk" component={ReduxThunkCon} />
             <Route path="/hookCom" component={HookCom} />
+            <Route path="/weui" component={WeUICom} />
           </Switch>
         </div>
       </Router>

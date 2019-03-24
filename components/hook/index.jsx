@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export default function() {
+export default function HooksCom() {
     let [age, setAge] = useState(26);
     let [girl, setGirl] = useState('W');
 
