@@ -8,6 +8,7 @@ const routers = [
     [ '/redux-thunk', 'Redux-thunk' ],
     [ '/hookCom', 'HookCom' ],
     [ '/weui', 'WeUICom' ],
+    [ '/bind', 'BindThisCom' ],
 ];
 
 export  default routers;

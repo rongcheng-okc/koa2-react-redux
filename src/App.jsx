@@ -60,6 +60,13 @@ const WeUICom = Loadable({
   }
 });
 
+const BindThisCom = Loadable({
+  loader: () => import('../components/bind-this'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+
 class App extends Component {
   render() {
     let links = routers.map((item, index) => {
@@ -88,6 +95,8 @@ class App extends Component {
             <Route path="/redux-thunk" component={ReduxThunkCon} />
             <Route path="/hookCom" component={HookCom} />
             <Route path="/weui" component={WeUICom} />
+            <Route path="/bind" component={BindThisCom} />
+            
           </Switch>
         </div>
       </Router>
