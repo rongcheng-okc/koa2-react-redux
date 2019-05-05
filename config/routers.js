@@ -9,6 +9,8 @@ const routers = [
     [ '/hookCom', 'HookCom' ],
     [ '/weui', 'WeUICom' ],
     [ '/bind', 'BindThisCom' ],
+    [ '/loop', 'LoopCom' ],
+    [ '/error', 'ErrorCom' ],
 ];
 
 export  default routers;

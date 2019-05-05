@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 require('../../css/common.css');
-import '../../css/page';
+import '../../css/page.module';
 
 class A extends Component {
     constructor() {
@@ -11,7 +11,6 @@ class A extends Component {
         this.toggleRadius = this.toggleRadius.bind(this);
     }
     toggleRadius() {
-        console.log(33);
         let v = !this.state.hasRadius;
         this.setState({
             hasRadius: v

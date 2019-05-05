@@ -28,12 +28,28 @@ module.exports = {
         ]
       },
       {
-        test: /\.css$/,
+        test: /(?<!\.module)\.css$/,
         use: [
           { loader: MiniCssExtractPlugin.loader },
           "css-loader"
-        ],
+        ]
       },
+      {
+        test: /\.module\.css$/,
+        use: ["style-loader", "css-loader?modules&importLoaders&localIdentName=[name]__[local]-[hash:base64:7]"],
+      },
+      // {
+      //   test: /(?<!\.module)\.scss$/,
+      //   test: /\\.scss$/,
+      //   use: [
+      //     { loader: MiniCssExtractPlugin.loader },
+      //     "sass-loader"
+      //   ],
+      // },
+      // {
+      //   test: /\.module\.scss$/,
+      //   use: ["style-loader", "css-loader?modules&importLoaders&localIdentName=[name]__[local]-[hash:base64:7]", 'sass-loader'],
+      // },
       {
         test: /\.scss$/,
         use: ["style-loader", "css-loader?modules&importLoaders&localIdentName=[name]__[local]-[hash:base64:5]"],

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'react-weui';
 import style from './index.scss'
-import '../../css/page'
+import '../../css/page.module'
 
 class WeUI extends Component {
     render() {

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { HashRouter as Router, Route, Link, Switch} from "react-router-dom";
+import { HashRouter as Router, Route, Link, Switch, } from "react-router-dom";
 import Loadable from 'react-loadable';
+import styles from '../css/page.module'
 
 import routers from '../config/routers'
 
@@ -67,24 +68,35 @@ const BindThisCom = Loadable({
   }
 });
 
+// const LoopCom = Loadable({
+//   loader: () => import('../components/loop1'),
+//   loading() {
+//     return <div>Loading...</div>
+//   }
+// });
+// 经实验不能循环调用，浏览器报 out of memory
+
+const ErrorBoundary = Loadable({
+  loader: () => import('../components/error-boundary'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+
 class App extends Component {
   render() {
     let links = routers.map((item, index) => {
       return (
-        <li key={index}>
+        <div className={styles.link} key={index}>
           <Link to={item[0]}>{item[1]}</Link>
-        </li>
+        </div>
       )
     });
 
     return (
         <Router>
         <div>
-          <nav>
-            <ul>
-              {links}
-            </ul>
-          </nav>
+          <nav className={styles['nav-container']}>{links}</nav>
           <Switch>
             <Route path="/" exact render={ () => { return <h1>I am Home</h1> } }/>
             <Route path="/redux-router" component={ReduxRouter} />
@@ -96,7 +108,8 @@ class App extends Component {
             <Route path="/hookCom" component={HookCom} />
             <Route path="/weui" component={WeUICom} />
             <Route path="/bind" component={BindThisCom} />
-            
+            {/* <Route path="/loop" component={LoopCom} /> */}
+            <Route path="/error" component={ErrorBoundary} />
           </Switch>
         </div>
       </Router>
