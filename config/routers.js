@@ -11,6 +11,7 @@ const routers = [
     [ '/bind', 'BindThisCom' ],
     [ '/loop', 'LoopCom' ],
     [ '/error', 'ErrorCom' ],
+    [ '/dom-diff', 'DomDiff' ],
 ];
 
-export  default routers;
+export default routers;

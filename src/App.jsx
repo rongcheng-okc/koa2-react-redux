@@ -83,6 +83,13 @@ const ErrorBoundary = Loadable({
   }
 });
 
+const DomDiff = Loadable({
+  loader: () => import('../components/dom-diff'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+
 class App extends Component {
   render() {
     let links = routers.map((item, index) => {
@@ -110,6 +117,7 @@ class App extends Component {
             <Route path="/bind" component={BindThisCom} />
             {/* <Route path="/loop" component={LoopCom} /> */}
             <Route path="/error" component={ErrorBoundary} />
+            <Route path="/dom-diff" component={DomDiff} />
           </Switch>
         </div>
       </Router>
