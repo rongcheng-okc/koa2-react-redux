@@ -90,6 +90,20 @@ const DomDiff = Loadable({
   }
 });
 
+const CodeRule = Loadable({
+  loader: () => import('../components/code-rule'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+
+const RefCom = Loadable({
+  loader: () => import('../components/ref'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+
 class App extends Component {
   render() {
     let links = routers.map((item, index) => {
@@ -118,6 +132,8 @@ class App extends Component {
             {/* <Route path="/loop" component={LoopCom} /> */}
             <Route path="/error" component={ErrorBoundary} />
             <Route path="/dom-diff" component={DomDiff} />
+            <Route path="/code-rule" component={CodeRule} />
+            <Route path="/ref" component={RefCom} />
           </Switch>
         </div>
       </Router>

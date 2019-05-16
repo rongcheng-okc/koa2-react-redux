@@ -12,6 +12,8 @@ const routers = [
     [ '/loop', 'LoopCom' ],
     [ '/error', 'ErrorCom' ],
     [ '/dom-diff', 'DomDiff' ],
+    [ '/code-rule', 'CodeRule' ],
+    [ '/ref', 'RefCom' ],
 ];
 
 export default routers;

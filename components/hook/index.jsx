@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Button } from 'react-weui';
 
 export default function HooksCom() {
     let [age, setAge] = useState(26);
@@ -26,9 +27,9 @@ export default function HooksCom() {
         <h2>Age => {age}</h2>
         <h2>Girl => {girl}</h2>
         <h2></h2>
-        <button onClick={ () => setAge(27) }>SetAge(27)</button><br/>
-        <button onClick={ () => setGirl('L') }>SetGirl('L')</button><br/>
-        <button onClick={ () => setGirl('X') }>SetGirl('X')</button><br/>
+        <Button onClick={ () => setAge(27) }>SetAge(27)</Button><br/>
+        <Button onClick={ () => setGirl('L') }>SetGirl('L')</Button><br/>
+        <Button onClick={ () => setGirl('X') }>SetGirl('X')</Button><br/>
     </div>
     )
 }

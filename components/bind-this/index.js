@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Button } from 'react-weui';
 
 class index extends Component {
   constructor(props) {
@@ -29,8 +30,8 @@ class index extends Component {
     const { name, } = this.state;
     return (
       <div>
-        <button onClick={e => this.handleClick1(123, e)}>雷霆你怎么了？</button>
-        <button onClick={this.handleClick2.bind(this, 234)}>雷霆不在年轻了</button>
+        <Button onClick={e => this.handleClick1(123, e)}>雷霆你怎么了？</Button>
+        <Button onClick={this.handleClick2.bind(this, 234)}>雷霆不在年轻了</Button>
         <p>{name}</p>
       </div>
     );

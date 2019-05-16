@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   mode: "production",
@@ -37,7 +38,10 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ["url-loader"]
+        loader: 'url-loader',
+        options: {
+          limit: 6000
+        }
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -57,6 +61,10 @@ module.exports = {
       filename: '[name].[contenthash:5].css',
       chunkFilename: '[contenthash:5].css',
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new WorkboxPlugin.InjectManifest({
+      swSrc: './src/service-worker.js',
+      swDest: 'service-worker.js',
+    }),
   ]
 };

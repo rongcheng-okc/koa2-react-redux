@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button } from 'react-weui';
 import { HashRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 const HOC1 = () => {
@@ -30,7 +31,7 @@ const B = WrappedComponent => {
           <br/>
           <Link to="/hoc/2">HOC2</Link>
           <br/>
-          <button onClick={() => {this.props.history.push({ pathname: "/hoc/1", search: "?name=yahoo", state: 23, param: { city: "HZ"} })}}>To HOC1</button>
+          <Button onClick={() => {this.props.history.push({ pathname: "/hoc/1", search: "?name=yahoo", state: 23, param: { city: "HZ"} })}}>To HOC1</Button>
           <Router basename="/hoc">
             <div>
                 <Route path="/1" component={HOC1} />

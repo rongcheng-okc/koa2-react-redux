@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Child from './child';
+import { Button } from 'react-weui';
 import ErrorBoundary from './boundary';
 
 class index extends Component {
@@ -37,9 +38,9 @@ class index extends Component {
     return (
       <div>
         <ErrorBoundary>
-          <button onClick={this.handleClick1}>Button</button>
-          <button onClick={this.handleClick2}>Obj1 => null</button>
-          <button onClick={this.handleClick3}>Obj2 => null</button>
+          <Button onClick={this.handleClick1}>Button</Button>
+          <Button onClick={this.handleClick2}>Obj1 => null</Button>
+          <Button onClick={this.handleClick3}>Obj2 => null</Button>
           <Child title={title} />
           <p>此处 obj1.name，将会把 obj1 变为 null， {obj1.name}</p>
         </ErrorBoundary>

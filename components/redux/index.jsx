@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Button } from 'react-weui';
 
 const ReduxCom = ({ btnName0, btnName1, btnClick }) => {
   return <div>
-    <button onClick={btnClick}>{btnName0}</button>
-    <button>{btnName1}</button>
+    <Button onClick={btnClick}>{btnName0}</Button>
+    <Button>{btnName1}</Button>
   </div>
 };
 

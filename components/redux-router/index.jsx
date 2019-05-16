@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'react-weui';
 require('../../css/common.css');
 import '../../css/page.module';
 
@@ -21,7 +22,7 @@ class A extends Component {
         return (
             <div>
                 <h1>Component A</h1>
-                <button onClick={this.toggleRadius}>toggleRadius</button>
+                <Button onClick={this.toggleRadius}>toggleRadius</Button>
                 <div className={`aqua-bc ${this.state.hasRadius ? 'border-radius' : ''}`}  style={{height: '100px', with: '100px', border: '1px solid red'}}>
                     className style
                 </div>
