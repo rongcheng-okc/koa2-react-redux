@@ -13,6 +13,10 @@ const imgCacheName = obj.img;
 const cssCacheName = obj.css;
 const jsCacheName = obj.js;
 
+workbox.setConfig({
+  debug: false
+});
+
 workbox.core.setCacheNameDetails({
   prefix: obj.prefix,
   suffix: obj.suffix,

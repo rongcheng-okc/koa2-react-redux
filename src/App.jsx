@@ -111,6 +111,13 @@ const ContextCom = Loadable({
   }
 });
 
+const RenderPropCom = Loadable({
+  loader: () => import('../components/render-prop'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+
 class App extends Component {
   render() {
     let links = routers.map((item, index) => {
@@ -142,6 +149,7 @@ class App extends Component {
             <Route path="/code-rule" component={CodeRule} />
             <Route path="/ref" component={RefCom} />
             <Route path="/context" component={ContextCom} />
+            <Route path="/render-prop" component={RenderPropCom} />
           </Switch>
         </div>
       </Router>

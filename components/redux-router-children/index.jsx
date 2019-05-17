@@ -4,7 +4,7 @@ import {
     Link
 } from "react-router-dom";
 
-import ReactRouterChildCom1 from "../redux-router-com1"
+import Child from "./Child"
 
 class ReactRouterCom extends Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class ReactRouterCom extends Component {
           </li>
         </ul>
 
-        <Route path={`${this.props.match.url}/:topicId`} component={ReactRouterChildCom1} />
+        <Route path={`${this.props.match.url}/:topicId`} component={Child} />
         <Route
           exact
           path={this.props.match.url}

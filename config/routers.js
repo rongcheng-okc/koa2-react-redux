@@ -15,6 +15,7 @@ const routers = [
     [ '/code-rule', 'CodeRule' ],
     [ '/ref', 'RefCom' ],
     [ '/context', 'ContextCom' ],
+    [ '/render-prop', 'RenderPropCom' ],
 ];
 
 export default routers;
