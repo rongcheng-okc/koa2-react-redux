@@ -14,6 +14,7 @@ const routers = [
     [ '/dom-diff', 'DomDiff' ],
     [ '/code-rule', 'CodeRule' ],
     [ '/ref', 'RefCom' ],
+    [ '/context', 'ContextCom' ],
 ];
 
 export default routers;

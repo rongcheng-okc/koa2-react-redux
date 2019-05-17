@@ -104,6 +104,13 @@ const RefCom = Loadable({
   }
 });
 
+const ContextCom = Loadable({
+  loader: () => import('../components/context'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+
 class App extends Component {
   render() {
     let links = routers.map((item, index) => {
@@ -134,6 +141,7 @@ class App extends Component {
             <Route path="/dom-diff" component={DomDiff} />
             <Route path="/code-rule" component={CodeRule} />
             <Route path="/ref" component={RefCom} />
+            <Route path="/context" component={ContextCom} />
           </Switch>
         </div>
       </Router>
