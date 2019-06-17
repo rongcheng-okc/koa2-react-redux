@@ -1,19 +1,18 @@
 import React from 'react';
 import { connect } from "react-redux";
 import RdeuxThunkCom from '../../components/redux-thunk';
-import { asyncChangeValue } from '../../redux/asyncActions';
+import { addFruit } from '../../redux/actions/fruitActions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    value: state.asyncValue.name
+    value: state.fruits
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    changeValue: (value) => {
-        console.log(77);
-        dispatch(asyncChangeValue(value))
+    addFruit: (value) => {
+        dispatch(addFruit(value))
     }
   };
 };

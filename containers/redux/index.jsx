@@ -1,21 +1,17 @@
 import { connect } from "react-redux";
 import ReduxCom from "../../components/redux";
-import { changeName0, changeName1 } from "../../redux/actions"
+import { addPlayer } from "../../redux/actions/playerActions"
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    btnName0: state.btnName0.name,
-    btnName1: state.btnName1.name
+    playerList: state.players,
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    btnClick: () => {
-      setTimeout(() => {
-        dispatch(changeName0('OKC'))
-      }, 5000);
-      dispatch(changeName1('YGY'));
+    btnClickAddPlayer: () => {
+      dispatch(addPlayer({ id: 3, name: '欧文', number: 2, }));
     }
   };
 };
